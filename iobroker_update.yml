@@ -1,0 +1,32 @@
+---
+  - hosts: HausAutomatisierung
+    ignore_errors: yes
+    ignore_unreachable: yes
+
+    tasks:
+    - name: iobroker stoppen
+      ansible.builtin.shell:
+        cmd: iobroker stop
+        chdir: /opt/iobroker
+
+    - name: iobroker update
+      ansible.builtin.shell:
+        cmd: iobroker update
+        chdir: /opt/iobroker
+
+    - name: iobroker upgrade self
+      ansible.builtin.shell:
+        cmd: iobroker upgrade self
+        chdir: /opt/iobroker
+
+    - name: iobroker Adaptar update
+      ansible.builtin.shell:
+        cmd: iobroker upgrade -y - upgrade all adapters
+        chdir: /opt/iobroker
+
+    - name: iobroker starten
+      ansible.builtin.shell:
+        cmd: iobroker start
+        chdir: /opt/iobroker
+
+
