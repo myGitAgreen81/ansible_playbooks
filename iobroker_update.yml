@@ -1,5 +1,5 @@
 ---
-  - hosts: HausAutomatisierung
+  - hosts: IoBroker
     ignore_errors: yes
     ignore_unreachable: yes
 
