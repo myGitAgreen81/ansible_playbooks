@@ -1,5 +1,5 @@
 ---
-  - hosts: All
+  - hosts: all
     ignore_errors: yes
     ignore_unreachable: yes
 
